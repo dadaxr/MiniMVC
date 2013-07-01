@@ -11,9 +11,9 @@ namespace MiniMVC;
 
 class Request {
 
-    public $controller = 'Main';
+    public $controller = 'Page';
     public $action = 'index';
-    public $params = null;
+    public $params = array();
     public $url;
 
     function __construct()

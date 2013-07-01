@@ -1,0 +1,114 @@
+/*background*/
+.bg_noise{
+    background: url(../img/bg_noise.jpg) repeat;
+}
+
+.bg_blueish{
+    background: url(../img/bg_blueish.jpg) repeat;
+}
+
+.main_wrapper{
+    margin: 25px auto;
+    padding: 50px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+h1.title{
+    text-align: center;
+    font-size: 90px;
+    line-height: 100%;
+    text-shadow: 3px 3px 7px #415b76
+}
+
+/*Debut Fiches*/
+    /*Debut Tableau des fiches*/
+
+    /*colonne des catégories*/
+    .table-entries td{
+        vertical-align: middle;
+    }
+
+    .table-entries .tags_col{
+        width: 150px;
+        text-align: center;
+    }
+
+    .table-entries .actions_col{
+        width: 30px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table-entries .actions_col span{
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .table-entries .actions_col .fui-new{
+        color: #3498DB;
+    }
+    .table-entries .actions_col .fui-new:hover{
+        color: #2980B9;
+    }
+    .table-entries .actions_col .fui-cross{
+        color: #E74C3C;
+    }
+    .table-entries .actions_col .fui-cross:hover{
+        color: #C0392B;
+    }
+
+    /*Fin Tableau des fiches*/
+
+
+    /*Debut Formulaire edition*/
+    .form-entries .tagsinput {
+        border-color: #bdc3c7;
+    }
+    /*Fin Formulaire edition*/
+
+/*Fin Fiches*/
+
+/*Debut Arbre catégories*/
+.tree_action_container{
+    padding: 5px;
+}
+.tree_action_container a{
+    cursor: pointer;
+}
+
+#categories_tree_container{
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+/*Fin Arbre catégories*/
+
+/*Debut Categories*/
+.form-categories{
+    margin: 0px;
+}
+
+.current_item_action_container{
+    padding-top: 20px;
+}
+
+.current_item_action_container .btn{
+    margin-bottom: 10px;
+}
+/*Fin Categories*/
+
+.readonly_tags .tag{
+    font-size: 11px;
+    border-radius: 4px;
+    background-color: #1abc9c;
+    color: #ffffff;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    line-height: 15px;
+    padding: 4px 5px 5px 5px;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}

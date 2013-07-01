@@ -1,0 +1,42 @@
+<?php
+$this->css('/jqwidgets/styles/jqx.base');
+$this->css('/jqwidgets/styles/jqx.bootstrap');
+$this->js('/jqwidgets/jqxcore');
+$this->js('/jqwidgets/jqxdata');
+$this->js('/jqwidgets/jqxcheckbox');
+$this->js('/jqwidgets/jqxtree');
+$this->js('/js/Entry/edit');
+?>
+<h2>Editer une fiche</h2>
+<div class="row">
+    <form id="form_entries" class="form-entries" action="" method="post">
+        <div class="span7">
+                <input type="hidden" name="entry[id]" value="<?= $entry ? $entry['id'] : '' ?>" />
+                <input type="hidden" id="ih_categories_id" name="categories_id" value="" /> <?php //rempli en js ?>
+                <fieldset>
+                    <legend>Fiche</legend>
+                    <label for="ti_entry_title">Titre</label>
+                    <input id="ti_entry_title" class="span7" type="text" name="entry[title]" placeholder="Titre..." value="<?= $entry ? $entry['title'] : '' ?>" required />
+
+                    <label for="txt_entry_description">Description</label>
+                    <textarea id="txt_entry_description" class="span7" rows="3" name="entry[description]" placeholder="Description de la fiche..."  ><?= $entry ? $entry['description'] : '' ?></textarea>
+
+                    <button type="submit" class="btn btn-large btn-primary">Envoyer</button>
+                </fieldset>
+
+        </div>
+        <div class="span5">
+                <fieldset>
+                    <legend>Catégories</legend>
+                    <div class="row tree_action_container">
+                        <div class="span5">
+                            <a id="trigger_expand_all" class="" >Déplier Tout</a> |
+                            <a id="trigger_collapse_all" class="" >Réplier Tout</a>
+                        </div>
+                    </div>
+                    <div id="categories_tree_container" data-categories-json="<?= htmlentities($list_categories_json) ?>" data-selected-categories-json="<?= htmlentities($list_selected_categories_json) ?>"></div>
+                </fieldset>
+            </form>
+        </div>
+    </form>
+</div>

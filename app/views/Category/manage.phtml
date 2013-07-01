@@ -1,0 +1,50 @@
+<?php
+/*ce code est redondant avec celui de /views/Entry/edit.phtml il faudrait idéalement créer un helper pour gérer ca plus proprement */
+$this->css('/jqwidgets/styles/jqx.base');
+$this->css('/jqwidgets/styles/jqx.bootstrap');
+$this->js('/jqwidgets/jqxcore');
+$this->js('/jqwidgets/jqxdata');
+$this->js('/jqwidgets/jqxcheckbox');
+$this->js('/jqwidgets/jqxdragdrop');
+$this->js('/jqwidgets/jqxtree');
+$this->js('/js/Category/manage');
+?>
+<h2>Gérer les catégories</h2>
+<form id="form_categories" class="form-categories" action="" method="post">
+<div class="row">
+    <input type="hidden" id="serialized_categories" name="serialized_categories" />
+    <div class="span7">
+        <fieldset>
+            <legend>Catégories</legend>
+            <div class="row tree_action_container">
+                <div class="span5">
+                    <a id="trigger_expand_all" class="" >Déplier Tout</a> |
+                    <a id="trigger_collapse_all" class="" >Réplier Tout</a>
+                </div>
+            </div>
+            <div id="categories_tree_container" data-categories-json="<?= htmlentities($list_categories_json) ?>"></div>
+        </fieldset>
+    </div>
+    <div class="span5">
+        <fieldset>
+            <legend>Actions</legend>
+            <div class="row tree_action_container">
+                <div class="span5">
+                    <a id="trigger_add" class="" >Ajouter</a> |
+                    <a id="trigger_remove_selected" class="" title="supprime le categorie selectionnée">Supprimer</a>
+                </div>
+                <div class="span5 current_item_action_container">
+                    <label for="ti_category_title"><h4>Catégorie selectionnée</h4></label>
+                    <input type="text" id="ti_category_title" placeholder="Titre de la categorie..." /><input id="trigger_update_selected"  type="button" class="btn" value="Modifier" />
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+</div>
+<div class="row">
+    <div class="span7">
+        <input type="submit" id="trigger_save_tree" class="btn btn-primary" value="Enregistrer" />
+    </div>
+</div>
+</form>

@@ -1,0 +1,40 @@
+<h2>Liste des fiches</h2>
+<div class="row">
+    <div class="span12">
+        <table class="table table-hover table-bordered table-entries">
+            <tr class="info">
+                <th>#</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th class="tags_col">Catégories</th>
+                <th class="actions_col" colspan="2">Action</th>
+            </tr>
+            <?php foreach($list_entries_with_categories as $a_row):
+                $an_entry = $a_row['entry'];
+            ?>
+            <tr>
+                <td><?= $an_entry['id'] ?></td>
+                <td><?= $an_entry['title'] ?></td>
+                <td><?= $an_entry['description'] ?></td>
+                <td class="tags_col">
+                    <div class="readonly_tags">
+                        <?php foreach($a_row['categories'] as $a_category): ?>
+                        <span class="tag"><span><?= $a_category['title'] ?></span></span>
+                        <?php endforeach; ?>
+                    </div>
+                </td>
+                <td class="actions_col">
+                    <a href="<?= BASE_URL ?>/entry/edit/<?=  $an_entry['id'] ?>">
+                        <span class="fui-new" data-toggle="tooltip" data-placement="bottom" title="Editer" data-original-title="Editer"></span>
+                    </a>
+                </td>
+                <td class="actions_col">
+                    <a href="<?= BASE_URL ?>/entry/remove/<?=  $an_entry['id'] ?>">
+                        <span class="fui-cross" data-toggle="tooltip" data-placement="bottom" title="Supprimer" data-original-title="Supprimer"></span>
+                    </a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+</div>

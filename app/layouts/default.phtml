@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Annuaire Proto - Medialibs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="<?= BASE_URL ?>/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="<?= BASE_URL ?>/flatui/css/flatui.css" rel="stylesheet">
+    <link href="<?= BASE_URL ?>/css/styles.css" rel="stylesheet">
+    <?php foreach($this->_view_css as $path_to_css): ?>
+        <link href="<?= BASE_URL.$path_to_css ?>" rel="stylesheet">
+    <?php endforeach; ?>
+    <link href="<?= BASE_URL ?>/img/favicon.ico"  type="image/x-icon" rel="shortcut icon">
+
+</head>
+
+<body class="bg_blueish">
+
+
+<div class="main_wrapper container bg_noise">
+
+    <h1 class="title">Annuaire Proto</h1>
+
+    <nav class="row">
+        <div class="span12">
+            <div class="navbar navbar-inverse">
+                <div class="navbar-inner">
+                    <div class="nav-collapse collapse" id="nav-collapse-01">
+                        <ul class="nav">
+                            <li class="<?= $this->request->controller == 'Page' && in_array($this->request->action, array('index')) ? 'active' : '' ?>">
+                                <a href="<?= BASE_URL ?>/page/index">
+                                    Accueil
+                                </a>
+                            </li>
+                            <li class="<?= in_array($this->request->controller, array('Entry','Category')) ? 'active' : '' ?>">
+                                <a href="#">
+                                    Administration
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="<?= BASE_URL ?>/entry/show">Fiches</a>
+                                        <ul>
+                                            <li><a href="<?= BASE_URL ?>/entry/show">Lister</a></li>
+                                            <li><a href="<?= BASE_URL ?>/entry/edit">Ajouter</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="<?= BASE_URL ?>/category/manage">Catégories</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="<?= $this->request->controller == "Page" && in_array($this->request->action, array('about')) ? 'active' : '' ?>">
+                                <a href="<?= BASE_URL ?>/page/about">
+                                    A propos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </nav>
+
+    <?= $layout_content ?>
+
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+
+</footer>
+
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+<script src="<?= BASE_URL ?>/js/jquery.tagsinput.js"></script>
+<script src="<?= BASE_URL ?>/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= BASE_URL ?>/bootstrap/js/bootstrap-select.js"></script>
+<script src="<?= BASE_URL ?>/js/application.js"></script>
+<?php foreach($this->_view_js as $path_to_js): ?>
+<script src="<?= BASE_URL.$path_to_js ?>"></script>
+<?php endforeach; ?>
+
+</body>
+</html>

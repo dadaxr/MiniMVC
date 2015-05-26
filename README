@@ -1,1 +1,2 @@
-This file was created by JetBrains PhpStorm 6.0.3 for binding GitHub repository
+Implémentation d'un mini framework MCV 
+- router / request / controller / model / layout / view 
